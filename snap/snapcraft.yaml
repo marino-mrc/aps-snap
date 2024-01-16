@@ -1,0 +1,20 @@
+name: aps
+base: core22
+version: '0.1' 
+summary: The Advanced Power Supply CLI snap # 79 char long summary
+description: |
+  This snap installs the Advanced Power Supply (APS) CLI. It works in conjuction with the 
+  Advanced Power Supply board that allows you to manage the output voltage provided to SBC and
+  miniPC in a scalable manner
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: strict
+
+apps:
+  aps:
+    command: bin/aps
+
+parts:
+  aps-cli:
+    source: https://github.com/marino-mrc/aps-cli.git
+    plugin: python
